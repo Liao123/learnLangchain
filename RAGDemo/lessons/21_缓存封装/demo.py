@@ -8,7 +8,7 @@ RAG_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAG_ROOT / "app"))
 
 # RetrievalCache 内部已经封装了前面学过的权限 key、TTL 和 LRU 容量限制。
-from retrieval_cache import RetrievalCache
+from 检索核心.retrieval_cache import RetrievalCache
 
 
 # 创建缓存对象：最多保留 2 条，每条最多有效 300 秒。

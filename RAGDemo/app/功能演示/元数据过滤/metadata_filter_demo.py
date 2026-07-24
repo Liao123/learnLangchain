@@ -1,6 +1,13 @@
 """按元数据过滤后再检索的应用示例。"""
 
-from rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
+import sys
+from pathlib import Path
+
+
+APP_DIR = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(APP_DIR))
+
+from 检索核心.rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
 
 
 # 订单系统已经知道用户买的是现制饮品；这不是模型猜的，是业务系统已有的信息。

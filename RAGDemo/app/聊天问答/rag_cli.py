@@ -1,19 +1,25 @@
 """星光咖啡店父子知识库问答：当前持续维护的 RAG 小应用。"""
 
 import os
+import sys
 import time
+from pathlib import Path
 
 from langchain.messages import AIMessage, HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 
-from rag_core import (
+# 当前文件在 app/聊天问答/；把 app/ 加进搜索路径，才能读取旁边“检索核心”文件夹。
+APP_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(APP_DIR))
+
+from 检索核心.rag_core import (
     build_source_records,
     get_index_content_version,
     load_embedding_model,
     load_parent_child_index,
     retrieve_parent_context,
 )
-from retrieval_cache import RetrievalCache
+from 检索核心.retrieval_cache import RetrievalCache
 
 
 TOP_K = 3

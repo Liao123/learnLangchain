@@ -8,8 +8,8 @@ from pathlib import Path
 RAG_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAG_ROOT / "app"))
 
-from rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
-from retrieval_cache import RetrievalCache
+from 检索核心.rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
+from 检索核心.retrieval_cache import RetrievalCache
 
 
 TOP_K = 3

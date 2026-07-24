@@ -8,8 +8,8 @@ RAG_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAG_ROOT / "app"))
 
 # get_index_content_version() 内部就是第 51 课写过的“读索引字节 -> SHA-256 -> 前 12 位”。
-from rag_core import get_index_content_version
-from retrieval_cache import RetrievalCache
+from 检索核心.rag_core import get_index_content_version
+from 检索核心.retrieval_cache import RetrievalCache
 
 
 # 这两个配置和完整应用中的值相同。

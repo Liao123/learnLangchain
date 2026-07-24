@@ -9,7 +9,7 @@ sys.path.insert(0, str(RAG_ROOT / "app"))
 
 # 这是前面已学过的：读取索引、加载 BGE、检索完整父章节。
 # 本课新学的缓存逻辑会直接写在下面。
-from rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
+from 检索核心.rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
 
 
 MIN_RELEVANCE_SCORE = 0.50

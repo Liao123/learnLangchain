@@ -8,7 +8,7 @@ from pathlib import Path
 RAG_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAG_ROOT / "app"))
 
-from rag_core import (
+from 检索核心.rag_core import (
     build_source_records,
     load_embedding_model,
     load_parent_child_index,

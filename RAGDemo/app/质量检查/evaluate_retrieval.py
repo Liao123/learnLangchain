@@ -1,6 +1,13 @@
 """用固定问题检查父子检索是否找对章节。"""
 
-from rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
+import sys
+from pathlib import Path
+
+
+APP_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(APP_DIR))
+
+from 检索核心.rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
 
 
 # 这个阈值和课程 Demo 保持一致。改了它以后，要重新运行全部测试题。

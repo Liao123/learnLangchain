@@ -23,7 +23,7 @@ sys.path.insert(0, str(RAG_ROOT / "app"))
 
 # 这三个函数是前面课程已经学过的“读索引、加载 BGE、BGE 语义检索”。
 # 本课新学的 BM25 与 RRF 会直接写在这个 demo 里，不先封装。
-from rag_core import (
+from 检索核心.rag_core import (
     load_embedding_model,
     load_parent_child_index,
     retrieve_parent_context,

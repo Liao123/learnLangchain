@@ -9,7 +9,7 @@ sys.path.insert(0, str(RAG_ROOT / "app"))
 
 # 这两个函数来自第 40、41 课已经学过的路由逻辑。
 # 本课不再展开关键词循环，只学习“把单题检查重复跑多次”。
-from rag_core import choose_route_action, match_knowledge_base_routes
+from 检索核心.rag_core import choose_route_action, match_knowledge_base_routes
 
 
 knowledge_base_routes = {

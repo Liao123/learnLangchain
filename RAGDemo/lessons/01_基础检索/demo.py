@@ -12,7 +12,7 @@ from sentence_transformers import util
 RAG_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAG_ROOT / "app"))
 
-from rag_core import QUERY_INSTRUCTION, load_embedding_model
+from 检索核心.rag_core import QUERY_INSTRUCTION, load_embedding_model
 
 
 # 索引中保存了切分后的文本、每段文本的向量，以及构建索引时使用的模型名称。

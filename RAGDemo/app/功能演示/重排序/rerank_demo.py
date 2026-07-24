@@ -1,6 +1,13 @@
 """查看 BGE 初排和 reranker 重排序差异的应用示例。"""
 
-from rag_core import (
+import sys
+from pathlib import Path
+
+
+APP_DIR = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(APP_DIR))
+
+from 检索核心.rag_core import (
     load_embedding_model,
     load_parent_child_index,
     load_reranker_model,

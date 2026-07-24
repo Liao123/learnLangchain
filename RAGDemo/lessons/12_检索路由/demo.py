@@ -15,7 +15,7 @@ sys.path.insert(0, str(RAG_ROOT / "app"))
 
 # 这三个函数都是已学过的：读取索引、加载 BGE、在给定资料范围中检索完整父章节。
 # 本课新出现的“路由判断、缩小子片段范围”会直接写在这个 demo.py 里。
-from rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
+from 检索核心.rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
 
 
 # 默认问题里有“周末”“营业”两个词，应该路由到“到店服务”。

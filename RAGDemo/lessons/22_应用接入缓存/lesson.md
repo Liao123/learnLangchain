@@ -35,7 +35,7 @@
 
 - 缓存必须放在 `retrieve_parent_context()` 前面。
 - 命中缓存时跳过的是 BGE 检索，不是 DeepSeek 最终回答。
-- 完整应用 `app/rag_cli.py` 已经接入同一套缓存；它用改写后的 `retrieval_question` 作为 key 的问题部分。
+- 完整应用 `app/聊天问答/rag_cli.py` 已经接入同一套缓存；它用改写后的 `retrieval_question` 作为 key 的问题部分。
 - 对话历史会影响改写结果，所以两句看起来相同的用户原话，不一定得到相同 `retrieval_question`，也就不一定命中缓存。
 
 ## 怎么运行和验证？

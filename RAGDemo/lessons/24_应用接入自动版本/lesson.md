@@ -48,7 +48,7 @@ public_customer:index-001e7af6fbec-top3-threshold0.70:周末几点营业？
 完整应用需要 DeepSeek Key：
 
 ```powershell
-py .\RAGDemo\app\rag_cli.py
+py .\RAGDemo\app\聊天问答\rag_cli.py
 ```
 
 启动后应看到：

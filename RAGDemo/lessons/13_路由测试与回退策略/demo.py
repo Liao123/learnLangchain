@@ -9,7 +9,7 @@ sys.path.insert(0, str(RAG_ROOT / "app"))
 
 # 下面三个函数的内部路由循环来自第 40 课。
 # 第 41 课不要求你重看循环，重点只看“预期值 -> 实际值 -> 是否通过”。
-from rag_core import (
+from 检索核心.rag_core import (
     build_routed_index_data,
     choose_route_action,
     load_embedding_model,

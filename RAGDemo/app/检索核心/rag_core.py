@@ -8,7 +8,8 @@ import numpy as np
 from sentence_transformers import CrossEncoder, SentenceTransformer, util
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+# rag_core.py 现在位于 RAGDemo/app/检索核心/，所以要向上 2 层才回到 RAGDemo 根目录。
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 PARENT_CHILD_INDEX = PROJECT_ROOT / "data" / "indexes" / "父子知识库索引.json"
 PARENT_METADATA_FILE = PROJECT_ROOT / "data" / "indexes" / "父子知识库元数据.json"
 LOCAL_MODEL_DIR = PROJECT_ROOT / "models" / "bge-small-zh-v1.5"

@@ -18,7 +18,7 @@ sys.path.insert(0, str(RAG_ROOT / "app"))
 # load_parent_child_index()：读取索引、父章节和元数据。
 # load_embedding_model()：加载把文字变成向量的 BGE 模型。
 # retrieve_parent_context()：先筛资料，再找最相关的完整章节。
-from rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
+from 检索核心.rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
 
 
 # 低于这个分数的片段不可靠，不会被当作本轮资料。

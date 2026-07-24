@@ -13,7 +13,7 @@ sys.path.insert(0, str(RAG_ROOT / "app"))
 # load_embedding_model：加载 BGE，负责快速找候选资料。
 # load_reranker_model：加载 reranker，负责重新判断候选资料谁更贴题。
 # rerank_matches：把 BGE 找到的候选片段交给 reranker 后重新排序。
-from rag_core import (
+from 检索核心.rag_core import (
     load_embedding_model,
     load_parent_child_index,
     load_reranker_model,

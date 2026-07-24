@@ -8,6 +8,7 @@ model = ChatOpenAI(
 )
 
 
+
 question = input("你想问什么：")
 # response = model.invoke(question)
 response = model.invoke([

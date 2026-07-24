@@ -18,7 +18,7 @@ sys.path.insert(0, str(RAG_ROOT / "app"))
 
 # 这四项都是前面课程学过的内容。
 # 本课新出现的“拆句、句子筛选、组装压缩资料”会直接写在这个 demo.py 里。
-from rag_core import (
+from 检索核心.rag_core import (
     QUERY_INSTRUCTION,
     load_embedding_model,
     load_parent_child_index,

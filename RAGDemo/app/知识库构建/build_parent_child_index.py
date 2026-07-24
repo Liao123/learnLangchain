@@ -1,12 +1,18 @@
 """把当前应用的 Markdown 知识库重新构建成父子索引。"""
 
+import sys
 from pathlib import Path
 
-from index_builder import build_parent_child_index, write_parent_child_index
-from rag_core import get_index_content_version, load_embedding_model
+
+# 当前文件在 app/知识库构建/；先让 Python 能找到 app/ 下的其他功能文件夹。
+APP_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(APP_DIR))
+
+from 知识库构建.index_builder import build_parent_child_index, write_parent_child_index
+from 检索核心.rag_core import get_index_content_version, load_embedding_model
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_FILE = PROJECT_ROOT / "data" / "source" / "长文档示例.md"
 METADATA_FILE = PROJECT_ROOT / "data" / "indexes" / "父子知识库元数据.json"
 INDEX_FILE = PROJECT_ROOT / "data" / "indexes" / "父子知识库索引.json"

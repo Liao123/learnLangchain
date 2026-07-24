@@ -8,10 +8,10 @@
 
 ```text
 修改 data/source/长文档示例.md
--> 运行 app/build_parent_child_index.py 重建索引
+-> 运行 app/知识库构建/build_parent_child_index.py 重建索引
 -> 索引 hash 自动变化，旧检索缓存自然失效
--> 运行 app/evaluate_retrieval.py 检查检索结果
--> 重启 app/rag_cli.py，用新资料回答用户
+-> 运行 app/质量检查/evaluate_retrieval.py 检查检索结果
+-> 重启 app/聊天问答/rag_cli.py，用新资料回答用户
 ```
 
 ## 已完成
@@ -46,7 +46,7 @@
 
 ## 当前入口
 
-- 完整应用：`app/rag_cli.py`
+- 完整应用：`app/聊天问答/rag_cli.py`
 - 课程模块：`lessons/`
 - 历史快照：`archive/`
 
@@ -78,3 +78,7 @@
 ```
 
 每个新能力第一次出现时，先在对应 `lessons/.../demo.py` 写完整原始逻辑和实际变量值；后续复用时才放进 `app/`。每课同步保留一份 `archive/` 独立案例。
+
+从第 53 课开始，Demo 专属的 Markdown、JSON 和输出都放在各自的 `lessons/本课目录/资料/`、`输出/` 中；`data/` 只保存完整应用共用的真实资料。
+
+课程 `lesson.md` 默认只写“改哪个文件 -> 运行什么命令 -> 看哪个结果”三步。复杂原理和代码细节只在需要时、用户主动查看时再解释。

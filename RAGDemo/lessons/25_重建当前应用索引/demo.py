@@ -17,15 +17,14 @@ from sentence_transformers import SentenceTransformer
 
 # LESSON_DIR 的实际值大致是：RAGDemo/lessons/25_重建当前应用索引。
 LESSON_DIR = Path(__file__).resolve().parent
-# parents[2] 从 lessons/25_重建当前应用索引 回到 RAGDemo 根目录。
-RAG_ROOT = LESSON_DIR.parents[1]
 
-# 当前 rag_cli.py 真正使用的是这份较长的 Markdown，不是 data/source/咖啡店知识库.md。
-source_file = RAG_ROOT / "data" / "source" / "长文档示例.md"
-# 元数据没有放进索引 JSON；应用读取索引时会单独读取它，所以构建前必须检查编号能对上。
-metadata_file = RAG_ROOT / "data" / "indexes" / "父子知识库元数据.json"
-# Demo 不覆盖应用索引，只在本课目录生成一份演示结果。
-demo_index_file = LESSON_DIR / "演示父子知识库索引.json"
+# 本课 Demo 专用资料都在自己的 lessons/25_重建当前应用索引/资料/ 目录。
+# 因此你修改它时，不会影响 data/ 里真实 app 正在使用的知识库。
+lesson_data_dir = LESSON_DIR / "资料"
+source_file = lesson_data_dir / "长文档示例.md"
+metadata_file = lesson_data_dir / "父子知识库元数据.json"
+# 输出也只放在本课自己的 输出/ 文件夹，不和其他课程的 JSON 混在一起。
+demo_index_file = LESSON_DIR / "输出" / "父子知识库索引.json"
 
 embedding_model_name = "BAAI/bge-small-zh-v1.5"
 child_chunk_size = 100
@@ -159,6 +158,8 @@ index_data = {
     "child_embeddings": child_embeddings.tolist(),
 }
 
+# mkdir() 在输出文件夹不存在时创建它；exist_ok=True 表示第二次运行时不报错。
+demo_index_file.parent.mkdir(exist_ok=True)
 old_version = make_short_version(demo_index_file) if demo_index_file.exists() else "（第一次运行，没有旧演示索引）"
 demo_index_file.write_text(
     json.dumps(index_data, ensure_ascii=False, indent=2),
@@ -169,5 +170,4 @@ new_version = make_short_version(demo_index_file)
 print("\n演示索引已写入：", demo_index_file.name)
 print("构建前演示版本：", old_version)
 print("构建后演示版本：", new_version)
-print("\n本课 demo 只写 lessons/25_重建当前应用索引/，没有修改 app 正在使用的索引。")
-
+print("\n本课 demo 只读写 lessons/25_重建当前应用索引/，没有修改 app 正在使用的索引。")

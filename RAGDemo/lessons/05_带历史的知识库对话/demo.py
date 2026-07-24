@@ -12,7 +12,7 @@ from langchain_openai import ChatOpenAI
 RAG_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAG_ROOT / "app"))
 
-from rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
+from 检索核心.rag_core import load_embedding_model, load_parent_child_index, retrieve_parent_context
 
 
 # 0.50 方便本课观察流程；实际项目要用测试题决定最终阈值。
