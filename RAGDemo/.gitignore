@@ -1,0 +1,9 @@
+# 本地下载的模型体积较大，且可按需重新下载。
+models/*
+!models/.gitignore
+
+# 密钥只通过环境变量提供，不保存到项目文件。
+.env
+
+__pycache__/
+*.pyc

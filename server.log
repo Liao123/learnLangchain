@@ -1,0 +1,26 @@
+{"level":30,"time":1784515346624,"pid":24264,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1784515346625,"pid":24264,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1784515704765,"pid":23488,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1784515704766,"pid":23488,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1784520689009,"pid":12160,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1784520689010,"pid":12160,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1784619145087,"pid":33092,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1784619145087,"pid":33092,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1784626869877,"pid":3980,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1784626869877,"pid":3980,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1784688044688,"pid":36880,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1784688044688,"pid":36880,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1784704061695,"pid":51072,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1784704061695,"pid":51072,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1784707372035,"pid":3952,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1784707372035,"pid":3952,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1784708879278,"pid":13336,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1784708879278,"pid":13336,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1784769812609,"pid":43028,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1784769812609,"pid":43028,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1784791735509,"pid":24504,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1784791735509,"pid":24504,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1784856577160,"pid":28064,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1784856577160,"pid":28064,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1784881940349,"pid":59000,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1784881940349,"pid":59000,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
