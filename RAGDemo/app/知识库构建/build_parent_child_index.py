@@ -9,7 +9,9 @@ APP_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(APP_DIR))
 
 from 知识库构建.index_builder import build_parent_child_index, write_parent_child_index
+from 质量检查.evaluate_retrieval import run_regression_tests
 from 检索核心.rag_core import get_index_content_version, load_embedding_model
+from 检索核心.rag_core import load_parent_child_index
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -49,7 +51,15 @@ def main() -> None:
     print("子片段数量：", len(index_data["children"]))
     print("新索引版本：", new_version)
     print("版本是否变化：", "是" if old_version != new_version else "否（原始资料没有变化）")
-    print("请重新启动 rag_cli.py，让应用读取这份新索引。")
+
+    # 新索引写完后立刻跑固定题。全通过才建议启动聊天程序。
+    print("\n正在运行检索回归测试...")
+    rebuilt_index_data = load_parent_child_index(INDEX_FILE, METADATA_FILE)
+    regression_summary = run_regression_tests(rebuilt_index_data, embedding_model)
+    if not regression_summary["全部通过"]:
+        raise RuntimeError("回归测试失败：请检查资料后再启动聊天程序。")
+
+    print("回归测试通过，可以启动 聊天问答/rag_cli.py。")
 
 
 if __name__ == "__main__":

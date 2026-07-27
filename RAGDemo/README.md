@@ -14,7 +14,7 @@ py .\RAGDemo\app\聊天问答\rag_cli.py
 
 - `app/`：当前实际应用，按“聊天问答、知识库构建、质量检查”等中文文件夹分类。
 - `lessons/`：按知识模块组织的简短讲义与最小 Demo。
-- `archive/`：第 21 到第 53 课的历史快照，可单独回看和运行。
+- `archive/`：第 21 到第 54 课的历史快照，可单独回看和运行。
 - `data/`：原始 Markdown 与配套 JSON 索引。
 - `models/`：可选的本地 BGE 模型目录，已被 Git 忽略。
 
