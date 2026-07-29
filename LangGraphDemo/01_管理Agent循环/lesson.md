@@ -1,4 +1,4 @@
-# 第 69 课：LangGraph 管理 Agent 循环
+# LangGraph 第 1 课：管理 Agent 循环
 
 这节课学什么：用 LangGraph 把“模型 -> 工具 -> 模型”的手写循环画成状态图。
 
@@ -12,7 +12,7 @@
 2. 运行：
 
 ```powershell
-py .\AgentDemo\10_LangGraph管理Agent循环\demo.py
+py .\LangGraphDemo\01_管理Agent循环\demo.py
 ```
 
 3. 看终端的执行过程，正常顺序是：

@@ -1,4 +1,4 @@
-"""第 69 课：用 LangGraph 管理“模型 -> 工具 -> 模型”的循环。"""
+"""LangGraph 第 1 课：用状态图管理“模型 -> 工具 -> 模型”的循环。"""
 
 import json
 import os
