@@ -1,0 +1,34 @@
+[
+  {
+    "index": 1,
+    "question": "订单 A1001 到哪里了？",
+    "expected_route": "order",
+    "actual_route": "order",
+    "passed": true,
+    "case_type": "订单查询"
+  },
+  {
+    "index": 2,
+    "question": "我不想要了，钱什么时候退回来？",
+    "expected_route": "refund",
+    "actual_route": "refund",
+    "passed": true,
+    "case_type": "退款意图"
+  },
+  {
+    "index": 3,
+    "question": "退款单 R2001 还要多久到账？",
+    "expected_route": "refund",
+    "actual_route": "refund",
+    "passed": true,
+    "case_type": "退款进度"
+  },
+  {
+    "index": 4,
+    "question": "明天上海会下雨吗？",
+    "expected_route": "human",
+    "actual_route": "human",
+    "passed": true,
+    "case_type": "范围外问题"
+  }
+]

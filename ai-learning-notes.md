@@ -114,6 +114,38 @@ p [(m[0], m[1]) if isinstance(m, tuple) else (m.type, m.content) for m in messag
 
 下一小步：继续理解 LangChain 中不同消息的类型，以及元组消息和模型返回的 AI 消息对象有什么区别。完成后再学习更正式的对话历史管理方式。
 
+LangGraph 学习进度：已完成第 18 课“state 和 config 的区别”，掌握 `graph.get_state(config)` 查看当前快照、`graph.get_state_history(config)` 查看同一 `thread_id` 的历史快照、`graph.update_state(config, {...})` 修正流程数据、从旧快照重新运行后续节点、`Annotated[..., add]` 的字段累加规则、固定节点的并行汇合、`Send` 动态创建节点任务、`Command(update=..., goto=...)` 节点内分支、子图的使用与独立 state，以及区分流程 state 和每次运行的 config。
+
+多 Agent 学习进度：已完成第 1 课“多专员分流工作流”。已经搭好“总调度 -> 对应专员子图”的结构；当前路由和回答是本地函数模拟，下一课会把总调度替换为真正的模型节点。
+
+多 Agent 第 2 课已创建：模型输出 `route`，Python 校验白名单后进入订单、退款或人工客服节点。此课运行需要 `DEEPSEEK_API_KEY`。
+
+多 Agent 第 3 课已完成：总调度可以根据 state 分多轮委派专员，专员每次完成后回到总调度，再由总调度决定下一步或结束。该课不需要模型 API。
+
+多 Agent 第 4 课已创建：总调度模型负责选路线；对应专员模型带着自己的规则和资料生成最终回答。该课一次请求通常会调用两次模型。
+
+多 Agent 第 5 课已创建：订单、退款专员分别只绑定自己的工具。该课通常会发生总调度、工具请求和最终回答等多次模型调用。
+
+多 Agent 第 6 课已创建：总调度从自然语言中提取路线、业务单号和任务，生成 handoff 交接单，再由专员直接按交接单处理。
+
+多 Agent 第 7 课已创建：用 Pydantic 的 `Handoff.model_validate(...)` 校验模型交接单。route 不在白名单、字段缺失或 JSON 格式错误时转人工客服。
+
+多 Agent 第 8 课已完成：用 LangGraph 运行配置 `recursion_limit` 防止 supervisor 和 specialist 的委派循环无限执行。它是最后一道保护，不能代替正常的 END 结束条件。
+
+多 Agent 第 9 课已完成：子图里的专员可以通过 `Command(goto=..., graph=Command.PARENT)` 主动跳回父图指定节点，由父图继续统一收尾。
+
+多 Agent 第 10 课已完成：订单、退款等专员子图都通过 `Command.PARENT` 交回父图总调度。父图根据共同 state 决定下一位专员，而不是让专员直接互相跳转。
+
+多 Agent 第 11 课已完成：用 `Send` 并行委派订单、退款等多个专员任务，用 `Annotated[..., add]` 合并结果，并在父图等待全部专员完成后汇总。
+
+多 Agent 第 12 课已完成：退款子图使用 `interrupt()` 等待人工确认，SQLite 保存暂停点；恢复后，子图通过 `Command.PARENT` 回父图生成统一回复。
+
+多 Agent 第 13 课已完成：专员捕获业务系统的已知失败，写入 failure_reason 并通过 `Command.PARENT` 交回父图转人工客服，而不是让错误中断整个流程。
+
+多 Agent 第 14 课已完成：退款专员从可信 `config` 读取操作人角色，在执行退款前校验权限。专员拥有工具不等于当前操作人拥有批准权限。
+
+多 Agent 第 15 课已创建：用一组带预期 route 的真实问题调用总调度模型，逐条比较实际路由并统计成功率，用于修改提示词或模型后的回归评测。
+
 ## 后续学习路线
 
 按小步骤继续，不一次展开：
@@ -131,3 +163,5 @@ p [(m[0], m[1]) if isinstance(m, tuple) else (m.type, m.content) for m in messag
 - 遇到报错先记录完整错误信息
 - API Key 不写进代码或公开发出来
 - 先理解代码为什么有效，再继续增加新功能
+
+多 Agent 第 16 课已创建：将每题的预期 route、实际 route、是否通过和题目类型写入本课 `输出\\route_evaluation_report.json`，同时在终端单独打印失败题，用于定位提示词或路由规则的具体问题。

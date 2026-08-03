@@ -44,3 +44,15 @@
 {"level":30,"time":1785311655975,"pid":47992,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
 {"level":30,"time":1785311733194,"pid":23436,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
 {"level":30,"time":1785311733194,"pid":23436,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1785459956295,"pid":33096,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1785459956296,"pid":33096,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1785459969601,"pid":22204,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1785459969601,"pid":22204,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1785465917921,"pid":25712,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1785465917921,"pid":25712,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1785467563571,"pid":58764,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1785467563571,"pid":58764,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1785483410204,"pid":42656,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1785483410204,"pid":42656,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1785638970890,"pid":21880,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1785638970890,"pid":21880,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
