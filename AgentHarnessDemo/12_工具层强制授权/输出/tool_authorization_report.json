@@ -1,0 +1,73 @@
+{
+  "dataset_name": "退款工具强制授权题集",
+  "dataset_version": "v1",
+  "summary": {
+    "total_count": 2,
+    "passed_count": 2
+  },
+  "cases": [
+    {
+      "task_id": "tool-authorized-001",
+      "server_confirmed": true,
+      "result": {
+        "tool_calls": [
+          {
+            "name": "submit_refund",
+            "args": {
+              "order_id": "A1001"
+            },
+            "result": {
+              "ok": true,
+              "reason": "退款已提交。",
+              "order_id": "A1001",
+              "refund_status": "submitted"
+            }
+          }
+        ],
+        "final_order": {
+          "order_status": "paid",
+          "refund_status": "submitted"
+        }
+      },
+      "evaluation": {
+        "expected_refund_status": "submitted",
+        "actual_refund_status": "submitted",
+        "expected_tool_succeeded": true,
+        "actual_tool_succeeded": true,
+        "tool_reason": "退款已提交。",
+        "passed": true
+      }
+    },
+    {
+      "task_id": "tool-reject-unconfirmed-001",
+      "server_confirmed": false,
+      "result": {
+        "tool_calls": [
+          {
+            "name": "submit_refund",
+            "args": {
+              "order_id": "A1001"
+            },
+            "result": {
+              "ok": false,
+              "reason": "服务器未确认退款，拒绝执行。",
+              "order_id": "A1001"
+            }
+          }
+        ],
+        "final_order": {
+          "order_status": "paid",
+          "refund_status": "not_requested"
+        }
+      },
+      "evaluation": {
+        "expected_refund_status": "not_requested",
+        "actual_refund_status": "not_requested",
+        "expected_tool_succeeded": false,
+        "actual_tool_succeeded": false,
+        "tool_reason": "服务器未确认退款，拒绝执行。",
+        "passed": true
+      }
+    }
+  ]
+}

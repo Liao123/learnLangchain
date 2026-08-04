@@ -1,0 +1,56 @@
+{
+  "dataset_name": "客服路由基础题集",
+  "version": "v1",
+  "tasks": [
+    {
+      "task_id": "route-order-001",
+      "case_type": "订单查询",
+      "input": {
+        "question": "订单 A1001 到哪里了？"
+      },
+      "expected": {
+        "route": "order"
+      }
+    },
+    {
+      "task_id": "route-refund-001",
+      "case_type": "退款意图",
+      "input": {
+        "question": "我想退钱"
+      },
+      "expected": {
+        "route": "refund"
+      }
+    },
+    {
+      "task_id": "route-refund-002",
+      "case_type": "退款进度",
+      "input": {
+        "question": "退款单 R2001 什么时候到账？"
+      },
+      "expected": {
+        "route": "refund"
+      }
+    },
+    {
+      "task_id": "route-human-001",
+      "case_type": "范围外问题",
+      "input": {
+        "question": "明天上海会下雨吗？"
+      },
+      "expected": {
+        "route": "human"
+      }
+    },
+    {
+      "task_id": "route-human-002",
+      "case_type": "范围外问题",
+      "input": {
+        "question": "请问你们的客服电话是多少？"
+      },
+      "expected": {
+        "route": "human"
+      }
+    }
+  ]
+}

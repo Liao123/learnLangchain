@@ -1,0 +1,9 @@
+{
+  "created_at": "2026-08-03T11:13:30",
+  "model_name": "deepseek-v4-pro",
+  "prompt_version": "router-v1",
+  "dataset_name": "客服路由基础题集",
+  "dataset_version": "v1",
+  "dataset_sha256": "e1af79cb9635c451a054f3acd6a03e2a286d43d4a17bb01a9da531cd501b501c",
+  "task_count": 2
+}

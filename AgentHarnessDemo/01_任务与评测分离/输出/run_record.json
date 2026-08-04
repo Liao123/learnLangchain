@@ -1,0 +1,26 @@
+{
+  "task": {
+    "task_id": "route-refund-001",
+    "input": {
+      "question": "我想退钱"
+    },
+    "expected": {
+      "route": "refund"
+    }
+  },
+  "agent_output": {
+    "route": "refund",
+    "trace": [
+      {
+        "step": "总调度",
+        "input": "我想退钱",
+        "output": "refund"
+      }
+    ]
+  },
+  "evaluation": {
+    "expected_route": "refund",
+    "actual_route": "refund",
+    "passed": true
+  }
+}

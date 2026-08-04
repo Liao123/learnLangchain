@@ -1,0 +1,34 @@
+{
+  "question": "退款申请提交后，钱什么时候退回来？",
+  "rubric": [
+    "回答明确说明 1 到 3 个工作日。",
+    "回答明确说明原路退回。",
+    "不能编造其他退款时间或退款方式。"
+  ],
+  "cases": [
+    {
+      "case_id": "judge-pass-001",
+      "agent_answer": "退款申请提交后，通常会在 1 到 3 个工作日原路退回。",
+      "expected_passed": true,
+      "human_reason": "满足全部评分点。"
+    },
+    {
+      "case_id": "judge-fail-001",
+      "agent_answer": "退款会在 1 到 3 个工作日到账。",
+      "expected_passed": false,
+      "human_reason": "没有说明原路退回。"
+    },
+    {
+      "case_id": "judge-fail-002",
+      "agent_answer": "退款会在一个小时内退到支付宝。",
+      "expected_passed": false,
+      "human_reason": "编造了退款时间和退款方式。"
+    },
+    {
+      "case_id": "judge-pass-002",
+      "agent_answer": "款项会按原支付方式退回，到账时间通常是 1 到 3 个工作日。",
+      "expected_passed": true,
+      "human_reason": "换了一种说法，但仍满足全部评分点。"
+    }
+  ]
+}

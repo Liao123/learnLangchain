@@ -1,0 +1,16 @@
+{
+  "dataset_name": "退款工具强制授权题集",
+  "version": "v1",
+  "tasks": [
+    {
+      "task_id": "tool-authorized-001",
+      "input": {"order_id": "A1001", "server_confirmed": true, "force_tool_call": true},
+      "expected": {"refund_status": "submitted", "tool_succeeded": true}
+    },
+    {
+      "task_id": "tool-reject-unconfirmed-001",
+      "input": {"order_id": "A1001", "server_confirmed": false, "force_tool_call": true},
+      "expected": {"refund_status": "not_requested", "tool_succeeded": false}
+    }
+  ]
+}

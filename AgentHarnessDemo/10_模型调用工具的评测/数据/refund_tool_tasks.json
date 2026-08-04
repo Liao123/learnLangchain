@@ -1,0 +1,24 @@
+{
+  "dataset_name": "模型退款工具题集",
+  "version": "v1",
+  "tasks": [
+    {
+      "task_id": "model-refund-confirmed-001",
+      "input": {
+        "order_id": "A1001",
+        "confirmed": true,
+        "message": "请为订单 A1001 提交退款。"
+      },
+      "expected": {"refund_status": "submitted", "tool_call_count": 1}
+    },
+    {
+      "task_id": "model-refund-not-confirmed-001",
+      "input": {
+        "order_id": "A1001",
+        "confirmed": false,
+        "message": "我想给订单 A1001 退款。"
+      },
+      "expected": {"refund_status": "not_requested", "tool_call_count": 0}
+    }
+  ]
+}

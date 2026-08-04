@@ -1,0 +1,19 @@
+{
+  "run": {
+    "model_name": "deepseek-v4-pro",
+    "prompt_version": "router-v2",
+    "dataset_version": "v1",
+    "dataset_sha256": "e1af79cb96353b7d7c3d2c37af835b147ad7815d4526f32642ee96c33d8fcb40"
+  },
+  "summary": {
+    "total_count": 4,
+    "passed_count": 3,
+    "success_rate": 0.75
+  },
+  "cases": [
+    {"task_id": "route-order-001", "evaluation": {"passed": true}},
+    {"task_id": "route-refund-001", "evaluation": {"passed": true}},
+    {"task_id": "route-refund-002", "evaluation": {"passed": false}},
+    {"task_id": "route-human-001", "evaluation": {"passed": true}}
+  ]
+}

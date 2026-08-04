@@ -1,0 +1,12 @@
+{
+  "dataset_name": "客服路由基础题集",
+  "version": "v1",
+  "tasks": [
+    {
+      "task_id": "route-order-001",
+      "case_type": "订单查询",
+      "input": {"question": "订单 A1001 到哪里了？"},
+      "expected": {"route": "payment"}
+    }
+  ]
+}

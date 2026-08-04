@@ -1,0 +1,26 @@
+{
+  "question": "订单 A1001 到哪里了？",
+  "max_attempts": 3,
+  "result": {
+    "answer": "已成功处理问题：订单 A1001 到哪里了？",
+    "attempts": [
+      {
+        "attempt_number": 1,
+        "status": "connection_error",
+        "error": "模拟网络暂时中断"
+      },
+      {
+        "attempt_number": 2,
+        "status": "connection_error",
+        "error": "模拟网络暂时中断"
+      },
+      {
+        "attempt_number": 3,
+        "status": "success",
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  "passed": true
+}

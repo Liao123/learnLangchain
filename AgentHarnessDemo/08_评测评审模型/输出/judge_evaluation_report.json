@@ -1,0 +1,63 @@
+{
+  "summary": {
+    "total_count": 4,
+    "matched_count": 4,
+    "accuracy": 1.0
+  },
+  "cases": [
+    {
+      "case_id": "judge-pass-001",
+      "agent_answer": "退款申请提交后，通常会在 1 到 3 个工作日原路退回。",
+      "human_expected_passed": true,
+      "human_reason": "满足全部评分点。",
+      "judge_output": {
+        "passed": true,
+        "reason": "回答明确说明1到3个工作日和原路退回，没有编造其他信息。",
+        "missing_points": []
+      },
+      "judge_matches_human": true
+    },
+    {
+      "case_id": "judge-fail-001",
+      "agent_answer": "退款会在 1 到 3 个工作日到账。",
+      "human_expected_passed": false,
+      "human_reason": "没有说明原路退回。",
+      "judge_output": {
+        "passed": false,
+        "reason": "未说明原路退回",
+        "missing_points": [
+          "回答明确说明原路退回。"
+        ]
+      },
+      "judge_matches_human": true
+    },
+    {
+      "case_id": "judge-fail-002",
+      "agent_answer": "退款会在一个小时内退到支付宝。",
+      "human_expected_passed": false,
+      "human_reason": "编造了退款时间和退款方式。",
+      "judge_output": {
+        "passed": false,
+        "reason": "回答编造了退款时间（一个小时内）和退款方式（退到支付宝），未说明1-3个工作日原路退回。",
+        "missing_points": [
+          "未说明1到3个工作日",
+          "未说明原路退回",
+          "编造了其他退款时间和方式"
+        ]
+      },
+      "judge_matches_human": true
+    },
+    {
+      "case_id": "judge-pass-002",
+      "agent_answer": "款项会按原支付方式退回，到账时间通常是 1 到 3 个工作日。",
+      "human_expected_passed": true,
+      "human_reason": "换了一种说法，但仍满足全部评分点。",
+      "judge_output": {
+        "passed": true,
+        "reason": "回答明确说明了1到3个工作日和原路退回，没有编造其他信息。",
+        "missing_points": []
+      },
+      "judge_matches_human": true
+    }
+  ]
+}

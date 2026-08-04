@@ -1,0 +1,6 @@
+{
+  "comparable": false,
+  "reason": "两次运行使用的题集内容不同，不能直接比较成功率。",
+  "baseline_dataset_sha256": "e1af79cb96353b7d7c3d2c37af835b147ad7815d4526f32642ee96c33d8fcb40",
+  "candidate_dataset_sha256": "a-different-dataset-hash"
+}

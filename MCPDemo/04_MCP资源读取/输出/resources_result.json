@@ -1,0 +1,14 @@
+{
+  "resources": [
+    {
+      "uri": "coffee://knowledge/member-points",
+      "mime_type": "text/markdown",
+      "content": "# 会员积分规则\n\n- 普通会员：每消费 1 元获得 1 积分。\n- 金卡会员：每消费 1 元获得 1.5 积分。\n- 积分将在订单完成后 24 小时内到账。\n"
+    },
+    {
+      "uri": "coffee://knowledge/refund-policy",
+      "mime_type": "text/markdown",
+      "content": "# 退款规则\n\n- 退款申请提交后，状态会显示为“退款处理中”。\n- 原路退款通常在 1 到 3 个工作日内到账。\n- 实际到账时间受支付渠道处理速度影响。\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "question": "我想退钱",
+  "route": "refund",
+  "final_answer": "退款专员：退款申请提交后，通常会在 1 到 3 个工作日原路退回。",
+  "trace": [
+    {
+      "node": "总调度",
+      "input": "我想退钱",
+      "decision": "选择 refund，进入 refund_agent"
+    },
+    {
+      "node": "退款专员",
+      "input": "我想退钱",
+      "decision": "查询退款规则并生成答复"
+    }
+  ]
+}

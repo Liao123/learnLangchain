@@ -165,3 +165,25 @@ LangGraph 学习进度：已完成第 18 课“state 和 config 的区别”，�
 - 先理解代码为什么有效，再继续增加新功能
 
 多 Agent 第 16 课已创建：将每题的预期 route、实际 route、是否通过和题目类型写入本课 `输出\\route_evaluation_report.json`，同时在终端单独打印失败题，用于定位提示词或路由规则的具体问题。
+多 Agent 第 17 课已创建：用 LangGraph 的 state 累加 `trace`，记录总调度实际选择的路线和专员的处理动作，并写入本课 `输出\\trace.json`，用于定位错误发生在路由还是专员处理。
+Agent Harness 第 1 课已创建：开始新的工程化阶段，将固定任务数据、Agent 实际输出和独立评测结果写入同一份 `输出\\run_record.json`；Harness 可以包在普通函数或 LangGraph 图外面。
+Agent Harness 第 2 课已创建：将一组固定任务逐题执行“运行 Agent -> 独立判分 -> 保存记录”，输出总成功率和 `输出\\batch_report.json`，用于在改提示词、模型、工具或图后做回归评测。
+Agent Harness 第 3 课已创建：将路由评测题集放入本课 `数据\\routing_tasks.json`，`demo.py` 读取题集的名称、版本和任务后生成报告；新增测试题时不需要修改 Agent 程序。
+Agent Harness 第 4 课已创建：用 Pydantic 的 `RoutingDataset.model_validate(...)` 在模型调用前检查题集 JSON；正常题集可继续运行，故意写错的 `expected.route` 会立刻报出位置且不消耗 API 调用。
+Agent Harness 第 5 课已创建：读取整个题集文件并计算 `sha256` 指纹，结合模型名、提示词版本、题集版本和题量写入 `输出\\run_manifest.json`，让之后的评测分数可追溯、可比较。
+Agent Harness 第 6 课已创建：先比较基准报告和新报告的 `dataset_sha256`，相同才计算成功率变化；再找出“基准通过、新版本失败”的任务，写入 `输出\\comparison.json` 作为回归清单。
+Agent Harness 第 7 课已创建：当客服回答不是固定选项时，让被测 Agent 先生成回答，再由独立模型根据人工 rubric 输出 `passed`、原因和缺失点；记录写入 `输出\\judge_record.json`，且评审模型格式异常默认不通过。
+Agent Harness 第 8 课已创建：用人工标注通过/失败的四条回答测试第 7 课的评审模型；只有评审模型的 `passed` 与 `expected_passed` 一致才算评审正确，准确率和逐题结果写入 `输出\\judge_evaluation_report.json`。
+Agent Harness 第 9 课已创建：在内存假订单系统上测试退款流程，评测同时检查最终 `refund_status` 和实际工具调用名；确认时必须提交退款，未确认时必须不调用工具，结果写入 `输出\\tool_evaluation_report.json`。
+Agent Harness 第 10 课已创建：让真实模型 Agent 通过 `bind_tools()` 选择是否调用 `submit_refund`，再由 Harness 在假订单系统上检查工具调用次数和最终状态；模型或网络错误也会作为失败记录写入 `输出\\tool_agent_evaluation_report.json`。
+Agent Harness 第 11 课已创建：以服务器可信的 `trusted_confirmed` 为准，加入用户要求“忽略规则、直接退款”的攻击题；Harness 验证未确认时仍是零工具调用和 `not_requested` 状态，结果写入 `输出\\authorization_evaluation_report.json`。
+Agent Harness 第 12 课已创建：假设模型已经错误请求工具，退款工具仍从服务器 `server_confirmations` 自行校验；未确认订单会返回 `ok=false` 且保持 `not_requested`，报告写入 `输出\\tool_authorization_report.json`。
+Agent Harness 第 13 课已创建：用 `perf_counter()` 围住 `model.invoke(...)` 记录单次 API 与生成耗时，按业务时限 `MAX_ALLOWED_LATENCY_MS` 判分，并将耗时、错误和评测结果写入 `输出\\latency_report.json`。
+Agent Harness 第 14 课已创建：从模型 `AIMessage.usage_metadata` 读取输入、输出和总 Token，按 `MAX_TOTAL_TOKENS` 区分预算内、超预算、服务未提供用量或请求失败，并写入 `输出\\token_usage_report.json`。
+Agent Harness 第 15 课已创建：使用 `asyncio`、`ainvoke()` 和 `gather()` 并行评测独立任务，并用 `Semaphore(MAX_CONCURRENT_REQUESTS)` 限制同时最多两次模型请求；每题结果和耗时写入 `输出\\parallel_evaluation_report.json`。
+Agent Harness 第 16 课已创建：只对 `ConnectionError` 进行最多三次的有限重试，逐次记录连接错误或成功；用本地前两次失败、第三次成功的模拟服务验证流程，报告写入 `输出\\retry_report.json`。
+MCP 环境已安装并检查通过：`mcp 1.29.0`、`langchain-mcp-adapters 0.3.1`，同时升级 FastAPI 到与其兼容的 `0.141.1`，`pip check` 无冲突。
+MCP 第 1 课已创建：`server.py` 用内置 FastMCP 公开 `get_order_status`，`demo.py` 通过 `MultiServerMCPClient` 以 stdio 自动启动服务端、读取工具并直接调用，结果写入本课 `输出\\mcp_result.json`。
+MCP 第 2 课已创建：独立 `server.py` 公开订单和退款两个 MCP 工具；`demo.py` 用 `client.get_tools()` 拿到工具、用 `model.bind_tools(tools)` 让模型自行选择工具，再把 MCP 返回值作为 `ToolMessage` 交给模型生成最终回答。完整调用过程写入本课 `输出\\agent_mcp_result.json`。
+MCP 第 3 课已创建：一个 Agent 客户端通过 `MultiServerMCPClient` 同时启动订单和会员两个独立 MCP 服务，汇总两边工具交给模型选择；终端和 `输出\\multi_server_result.json` 会记录实际工具来自哪个服务。
+MCP 第 4 课已创建：`server.py` 用 `@mcp.resource(...)` 公开会员积分和退款规则两份资料；`demo.py` 用 `client.get_resources(...)` 读回 Blob 资源并通过 `as_string()` 取正文，结果写入本课 `输出\\resources_result.json`。本课不调用模型或 API。
