@@ -1,0 +1,11 @@
+{
+  "args": {
+    "order_id": "A1001",
+    "idempotency_key": "cancel-A1001-001"
+  },
+  "client_timeout_seconds": 3.0,
+  "result": {
+    "outcome": "response_received",
+    "tool_result": "{\n  \"ok\": true,\n  \"order_id\": \"A1001\",\n  \"status\": \"已取消\",\n  \"cancelled_count\": 1,\n  \"idempotency_replayed\": true\n}"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "tool_name": "get_slow_order_status",
+  "client_timeout_seconds": 3.0,
+  "result": {
+    "outcome": "success",
+    "result": "{\n  \"found\": true,\n  \"order_id\": \"A1001\",\n  \"status\": \"配送中\",\n  \"estimated_arrival\": \"今天送达\"\n}"
+  }
+}

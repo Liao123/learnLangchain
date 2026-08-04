@@ -1,0 +1,13 @@
+{
+  "prompt_name": "draft_refund_response",
+  "arguments": {
+    "order_id": "A1001",
+    "refund_reason": "饮品洒漏"
+  },
+  "messages": [
+    {
+      "message_type": "human",
+      "content": "请按星光咖啡退款客服规范处理这条请求。\n\n订单号：A1001\n退款原因：饮品洒漏\n\n回复需要说明：已收到申请、退款通常在 1 到 3 个工作日内原路退回。\n不要承诺具体到账时刻，也不要编造订单状态。"
+    }
+  ]
+}

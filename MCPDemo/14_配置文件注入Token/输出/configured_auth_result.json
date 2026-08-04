@@ -1,0 +1,9 @@
+{
+  "config_path": "D:\\案例\\AI学习\\learnLangchain\\MCPDemo\\14_配置文件注入Token\\mcp_servers.json",
+  "authorization_template": "Bearer ${MCP_DEMO_TOKEN}",
+  "token_environment_variable": "MCP_DEMO_TOKEN",
+  "loaded_tool_names": [
+    "get_order_status"
+  ],
+  "result": "{\n  \"found\": true,\n  \"order_id\": \"A1001\",\n  \"status\": \"配送中\",\n  \"estimated_arrival\": \"今天送达\"\n}"
+}

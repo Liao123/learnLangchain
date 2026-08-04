@@ -1,0 +1,4 @@
+{"timestamp": "2026-08-04T16:57:15", "actor": "U1001", "client_id": "coffee-customer-agent", "scopes": ["orders:read"], "tool_name": "get_order_status", "order_id": "A1001", "outcome": "success", "reason": null}
+{"timestamp": "2026-08-04T16:57:27", "actor": "U1001", "client_id": "coffee-customer-agent", "scopes": ["orders:read"], "tool_name": "get_order_status", "order_id": "A1002", "outcome": "denied", "reason": "order_access_denied"}
+{"timestamp": "2026-08-04T16:59:11", "actor": "U1001", "client_id": "coffee-customer-agent", "scopes": ["orders:read"], "tool_name": "get_order_status", "order_id": "A1001", "outcome": "success", "reason": null}
+{"timestamp": "2026-08-04T17:00:02", "actor": "U1001", "client_id": "coffee-customer-agent", "scopes": ["orders:read"], "tool_name": "get_order_status", "order_id": "A1002", "outcome": "denied", "reason": "order_access_denied"}

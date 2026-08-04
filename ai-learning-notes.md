@@ -187,3 +187,17 @@ MCP 第 1 课已创建：`server.py` 用内置 FastMCP 公开 `get_order_status`
 MCP 第 2 课已创建：独立 `server.py` 公开订单和退款两个 MCP 工具；`demo.py` 用 `client.get_tools()` 拿到工具、用 `model.bind_tools(tools)` 让模型自行选择工具，再把 MCP 返回值作为 `ToolMessage` 交给模型生成最终回答。完整调用过程写入本课 `输出\\agent_mcp_result.json`。
 MCP 第 3 课已创建：一个 Agent 客户端通过 `MultiServerMCPClient` 同时启动订单和会员两个独立 MCP 服务，汇总两边工具交给模型选择；终端和 `输出\\multi_server_result.json` 会记录实际工具来自哪个服务。
 MCP 第 4 课已创建：`server.py` 用 `@mcp.resource(...)` 公开会员积分和退款规则两份资料；`demo.py` 用 `client.get_resources(...)` 读回 Blob 资源并通过 `as_string()` 取正文，结果写入本课 `输出\\resources_result.json`。本课不调用模型或 API。
+MCP 第 5 课已创建：同一 MCP 服务同时提供会员积分规则资源和订单状态工具。客户端先读取固定资源并放进 `SystemMessage`，模型只有遇到实时订单问题才请求 `get_order_status`；过程写入本课 `输出\\resource_and_tool_result.json`。
+MCP 第 6 课已创建：服务端用 `@mcp.prompt()` 公开带 `order_id`、`refund_reason` 变量的退款客服话术；客户端用 `client.get_prompt(...)` 取得填充变量后的 LangChain 消息数组，结果写入本课 `输出\\prompt_result.json`。本课不调用模型或 API。
+MCP 第 7 课已创建：服务端以 `streamable-http` 独立监听 `http://127.0.0.1:8011/mcp`；客户端不再用 `command`、`args` 启动子进程，而是用 URL 连接 HTTP MCP 服务并调用订单工具，结果写入本课 `输出\\http_mcp_result.json`。
+MCP 第 8 课已创建：HTTP MCP 服务使用 Bearer Token 和 `orders:read` scope 验证客户端；客户端从 `MCP_DEMO_TOKEN` 环境变量读取教学 Token，通过连接配置的 `headers` 发送 `Authorization` 请求头。验证结果写入本课 `输出\\authenticated_mcp_result.json`，不保存 Token 值。
+MCP 第 9 课已创建：客户端通过 `headers` 发送自定义 `X-App-ID`；服务端用 `mcp.streamable_http_app()` 加 Starlette 中间件读取、检查该 Header，检查通过后才把请求交给 MCP。该案例明确 App ID 不能单独构成鉴权，结果写入本课 `输出\\custom_header_result.json`。
+MCP 第 10 课已创建：教学网关同时验证 Bearer Token、`X-App-ID` 与 `orders:read` scope 的绑定关系；只有 Token 所属 App ID 和权限都匹配时才放行 MCP 请求。真实 OAuth/JWT 验证以 `TOKEN_IDENTITIES` 假数据模拟，结果写入本课 `输出\\verified_client_result.json`。
+MCP 第 11 课已创建：服务端工具通过 `get_access_token()` 读取当前已验证 Token 的 `subject` 和 `scopes`，在 `get_order_status` 内部检查订单归属和 `orders:read` / `orders:read:any` 权限。普通会员、菜单 Agent、客服专员得到不同结果，运行记录写入本课 `输出\\tool_authorization_result.json`。
+MCP 第 12 课已创建：订单工具在服务端将身份、scope、订单号、工具名和成功/拒绝结果追加写入 `输出\\audit_log.jsonl`；日志不保存 Bearer Token 原文，成功与被拒绝的调用都可追溯。
+MCP 第 13 课已创建：将 HTTP MCP 服务名称、传输方式和 URL 放到本课 `mcp_servers.json`，客户端用 `json.loads()` 读取配置并将 `config["mcpServers"]` 直接交给 `MultiServerMCPClient`，结果写入 `输出\\configured_mcp_result.json`。
+MCP 第 14 课已创建：`mcp_servers.json` 中的 Authorization 只保存 `${MCP_DEMO_TOKEN}` 占位文字；客户端从环境变量读取教学 Token、只在内存中替换后连接受保护服务，结果写入 `输出\\configured_auth_result.json`，不保存 Token 值。
+MCP 第 15 课已创建：客户端用 `asyncio.wait_for(..., timeout=...)` 限制 MCP 工具调用等待时间；慢服务固定等待 2 秒，默认 1 秒超时，设置 `MCP_TOOL_TIMEOUT_SECONDS=3` 后成功。结果写入 `输出\\tool_timeout_result.json`，并说明超时不代表远端写操作一定停止。
+MCP 第 16 课已创建：取消订单写工具接收 `idempotency_key`；服务端先登记 `processing`、完成后保存结果，相同键的超时重试不会再次取消，`cancelled_count` 保持为 1。结果写入 `输出\\idempotency_result.json`。
+MCP 第 17 课已创建：将订单和幂等记录从内存字典迁移到本课 `输出\\idempotency.sqlite`；服务重启后仍可读取同一 `idempotency_key` 的 completed 结果，避免再次取消。提供 `reset_data.py` 仅用于清空本课教学数据库。
+MCP 第 18 课已创建：幂等记录同时保存 `request_json` 和首次结果；同键同参数可重放，同键换成另一订单会返回 `idempotency_key_conflict`，避免错误复用缓存或执行不同写操作。结果写入本课 `输出\\idempotency_conflict_result.json`。

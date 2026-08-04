@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "protected_order_service": {
+      "transport": "streamable_http",
+      "url": "http://127.0.0.1:8018/mcp",
+      "headers": {
+        "Authorization": "Bearer ${MCP_DEMO_TOKEN}"
+      }
+    }
+  }
+}

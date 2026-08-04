@@ -64,3 +64,5 @@
 {"level":30,"time":1785815509790,"pid":12424,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
 {"level":30,"time":1785815512251,"pid":56160,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
 {"level":30,"time":1785815512251,"pid":56160,"hostname":"liao","msg":"MySQL MCP server running on stdio"}
+{"level":30,"time":1785836393005,"pid":63124,"hostname":"liao","msg":"config>{\"host\":\"220.166.97.106\",\"user\":\"root\",\"password\":\"******\",\"database\":\"ou_manage\",\"port\":23307}"}
+{"level":30,"time":1785836393005,"pid":63124,"hostname":"liao","msg":"MySQL MCP server running on stdio"}

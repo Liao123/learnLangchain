@@ -1,0 +1,16 @@
+{
+  "mcp_url": "http://127.0.0.1:8014/mcp",
+  "token_environment_variable": "MCP_DEMO_TOKEN",
+  "app_id": "coffee-customer-agent",
+  "required_scope": "orders:read",
+  "loaded_tool_names": [
+    "get_order_status"
+  ],
+  "call": {
+    "tool_name": "get_order_status",
+    "args": {
+      "order_id": "A1001"
+    },
+    "result": "{\n  \"found\": true,\n  \"order_id\": \"A1001\",\n  \"status\": \"配送中\",\n  \"estimated_arrival\": \"今天送达\"\n}"
+  }
+}

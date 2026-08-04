@@ -1,0 +1,29 @@
+{
+  "idempotency_key": "cancel-request-001",
+  "results": [
+    {
+      "label": "首次取消 A1001",
+      "args": {
+        "order_id": "A1001",
+        "idempotency_key": "cancel-request-001"
+      },
+      "result": "{\n  \"ok\": true,\n  \"order_id\": \"A1001\",\n  \"status\": \"已取消\",\n  \"cancelled_count\": 1,\n  \"idempotency_replayed\": false\n}"
+    },
+    {
+      "label": "同键同参数重试 A1001",
+      "args": {
+        "order_id": "A1001",
+        "idempotency_key": "cancel-request-001"
+      },
+      "result": "{\n  \"ok\": true,\n  \"order_id\": \"A1001\",\n  \"status\": \"已取消\",\n  \"cancelled_count\": 1,\n  \"idempotency_replayed\": true\n}"
+    },
+    {
+      "label": "同键但换成 A1002",
+      "args": {
+        "order_id": "A1002",
+        "idempotency_key": "cancel-request-001"
+      },
+      "result": "{\n  \"ok\": false,\n  \"error\": \"idempotency_key_conflict\",\n  \"message\": \"该幂等键已经用于另一组请求参数，不能复用。\"\n}"
+    }
+  ]
+}

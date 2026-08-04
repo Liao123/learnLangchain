@@ -1,0 +1,7 @@
+{
+  "mcp_url": "http://127.0.0.1:8015/mcp",
+  "token_environment_variable": "MCP_DEMO_TOKEN",
+  "requested_order_id": "A1002",
+  "tool_name": "get_order_status",
+  "result": "{\n  \"ok\": false,\n  \"error\": \"order_access_denied\",\n  \"message\": \"当前身份无权查看这笔订单。\"\n}"
+}
